@@ -1,0 +1,14 @@
+{
+  "name": "fumi-brain-reference",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Provider-selectable reference backend for the FUMI ESP32 AI companion",
+  "scripts": {
+    "start": "node --env-file=.env server.mjs",
+    "dev": "node --watch --env-file=.env server.mjs",
+    "check": "node --check server.mjs"
+  },
+  "engines": {
+    "node": ">=20.6.0"
+  }
+}

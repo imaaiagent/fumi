@@ -1,0 +1,11 @@
+#pragma once
+
+// Copy this file to: firmware/fumi_config.h
+// Never commit fumi_config.h to a public repository.
+
+#define FUMI_WIFI_SSID_CONFIG "YOUR_WIFI_SSID"
+#define FUMI_WIFI_PASSWORD_CONFIG "YOUR_WIFI_PASSWORD"
+
+// Your FUMI backend endpoints.
+#define FUMI_BRAIN_URL_CONFIG "https://your-fumi-backend.example/brain"
+#define FUMI_VOICE_URL_CONFIG "https://your-fumi-backend.example/voice"
