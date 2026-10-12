@@ -1,5 +1,7 @@
 # FUMI
 
+![FUMI](docs/assets/fumi-banner.png)
+
 ### An open-source AI companion that lives on your desk.
 
 FUMI is a Tamagotchi-inspired physical AI companion built around an ESP32-S3 display board.
@@ -69,18 +71,17 @@ Then open `demo/index.html` and enter your backend URL.
 
 ### Hardware demo
 
-Upload your real, unedited demo video as `docs/assets/fumi-demo.mp4`, then link it here. The repository intentionally leaves the media file for the maintainer to provide. The video should show:
+The repository includes the real prototype demo at `docs/assets/fumi-demo.mp4`.
 
-1. FUMI booting
-2. the display/UI
-3. touch interaction
-4. Wi-Fi connection
-5. an AI response
-6. voice interaction, if voice is enabled
-
-Do not publish a demo video that exposes passwords, API keys, private SSIDs, or private conversations.
+Do not publish media that exposes passwords, API keys, private SSIDs, or private conversations.
 
 ---
+
+### The physical FUMI
+
+<img src="docs/assets/fumi-photo-1.png" alt="FUMI prototype" width="420">
+
+[▶ Watch the real FUMI prototype demo](docs/assets/fumi-demo.mp4)
 
 ## Supported AI providers
 
@@ -147,29 +148,15 @@ This means you can use Claude or Grok for FUMI's personality/answer while using 
 ```text
 FUMI/
 ├── firmware/
-│   ├── FUMI.ino
-│   ├── fumi_config.h.example
-│   └── README.md
-│
 ├── backend/
-│   ├── server.mjs
-│   ├── package.json
-│   └── .env.example
-│
 ├── demo/
-│   └── index.html
-│
 ├── docs/
-│   ├── ARCHITECTURE.md
-│   ├── DEMO.md
 │   └── assets/
-│
+├── scripts/
 ├── .github/
-│   ├── ISSUE_TEMPLATE/
-│   └── workflows/
-│
 ├── CONTRIBUTING.md
 ├── SECURITY.md
+├── CHANGELOG.md
 ├── LICENSE
 └── README.md
 ```
