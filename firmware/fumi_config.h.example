@@ -9,3 +9,5 @@
 // Your FUMI backend endpoints.
 #define FUMI_BRAIN_URL_CONFIG "https://your-fumi-backend.example/brain"
 #define FUMI_VOICE_URL_CONFIG "https://your-fumi-backend.example/voice"
+
+// Optional backend device authentication. Leave blank if disabled.\n#define FUMI_DEVICE_TOKEN_CONFIG ""\n

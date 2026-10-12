@@ -536,13 +536,7 @@ void fumi_voice_upload_task(void *parameter)
 
     Serial.println(">>> VOICE HTTP BEGIN");
 
-    if (!http.begin(
-        client,
-        "fumi-brain-production.up.railway.app",
-        443,
-        "/voice",
-        true
-    ))
+    if (!http.begin(client, FUMI_VOICE_URL))
     {
         Serial.println(">>> VOICE HTTP BEGIN FAILED");
         free(wav_buffer);
@@ -560,6 +554,9 @@ void fumi_voice_upload_task(void *parameter)
         "X-Fumi-Device-Id",
         "fumi-main"
     );
+    if (strlen(FUMI_DEVICE_TOKEN_CONFIG) > 0) {
+        http.addHeader("X-Fumi-Device-Token", FUMI_DEVICE_TOKEN_CONFIG);
+    }
 
     Serial.println(">>> SENDING WAV TO /voice...");
     Serial.println(">>> BEFORE VOICE POST");
@@ -2909,13 +2906,7 @@ Serial.println(FUMI_BRAIN_URL);
 Serial.print("WiFi IP: ");
 Serial.println(WiFi.localIP());
 
-if (!http.begin(
-        client,
-        "fumi-brain-production.up.railway.app",
-        443,
-        "/brain",
-        true
-    ))
+if (!http.begin(client, FUMI_BRAIN_URL))
 {
     Serial.println(">>> HTTP BEGIN FAILED");
 
@@ -2931,6 +2922,9 @@ http.addHeader(
     "Content-Type",
     "application/json"
 );
+if (strlen(FUMI_DEVICE_TOKEN_CONFIG) > 0) {
+    http.addHeader("X-Fumi-Device-Token", FUMI_DEVICE_TOKEN_CONFIG);
+}
 
 Serial.println(">>> BEFORE BUILD BODY");
 

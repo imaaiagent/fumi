@@ -52,7 +52,7 @@ It combines:
 
 ### Browser demo
 
-The repository includes `demo/index.html`, which lets you test `/brain` from a browser without the physical device.
+The repository includes `demo/index.html`, which lets you test `/brain` from a browser without the physical device. If device authentication is enabled, enter the same optional device token in the demo.
 
 Run the backend:
 
@@ -69,7 +69,7 @@ Then open `demo/index.html` and enter your backend URL.
 
 ### Hardware demo
 
-Add a real, unedited video to `docs/assets/` showing:
+Upload your real, unedited demo video as `docs/assets/fumi-demo.mp4`, then link it here. The repository intentionally leaves the media file for the maintainer to provide. The video should show:
 
 1. FUMI booting
 2. the display/UI
@@ -178,6 +178,23 @@ FUMI/
 
 ## Firmware setup
 
+The firmware requires the upstream Waveshare driver files and the libraries shipped with its Arduino example. Run the dependency setup script first; it fetches the official source and generates the local Arduino sketch folder. Install any bundled libraries listed by the upstream example into your Arduino libraries folder before compiling.
+
+Windows PowerShell:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\\scripts\\setup-waveshare.ps1
+```
+
+macOS / Linux:
+
+```bash
+bash scripts/setup-waveshare.sh
+```
+
+Then open `firmware/build/LVGL_Arduino/LVGL_Arduino.ino` in Arduino IDE. Edit the generated local file `firmware/build/LVGL_Arduino/fumi_config.h` with your Wi-Fi credentials and backend URLs.
+
+
 ### Arduino IDE
 
 Recommended development baseline:
@@ -232,6 +249,7 @@ cd backend
 cp .env.example .env
 npm install
 npm run check
+npm test
 npm run dev
 ```
 
@@ -247,7 +265,7 @@ Chat:
 curl -X POST http://localhost:8787/brain   -H "Content-Type: application/json"   -d '{"message":"Hey FUMI, introduce yourself."}'
 ```
 
-The backend returns a simple contract that the firmware can consume:
+The backend preserves FUMI's original state-event contract (`event`, `hunger`, `happiness`, `energy`, `bond`, `affection`, `playfulness`, `sleeping`, `expression`, and `age_seconds`) and returns `action`, `expression`, and `message`. The same `/brain` route also supports a plain `message` for the browser demo. The backend returns a simple contract that the firmware can consume:
 
 ```json
 {
@@ -286,24 +304,25 @@ See `SECURITY.md`.
 
 ---
 
-## Roadmap
+## Project status
 
-- [x] Animated FUMI UI
-- [x] Touch interaction
-- [x] Hunger / energy / happiness
-- [x] Bond and growth system
-- [x] Mini-game
-- [x] Wi-Fi AI backend
-- [x] Push-to-talk voice pipeline
-- [x] Provider-selectable text model architecture
-- [ ] Publish complete Waveshare dependency tree
-- [ ] Add verified end-to-end hardware video
-- [ ] Add device authentication
-- [ ] Add more speech-to-text providers
-- [ ] Add optional local/offline model support
-- [ ] Release tagged hardware builds
+FUMI is presented as a complete open-source reference build in this repository:
 
----
+- animated FUMI UI
+- touch interaction
+- hunger, energy, happiness, bond, and growth
+- mini-game
+- Wi-Fi AI backend
+- push-to-talk voice pipeline
+- selectable text-model providers
+- backend device authentication
+- multiple speech-to-text provider adapters
+- local model support through Ollama / OpenAI-compatible endpoints
+- GitHub release automation
+- documented Waveshare dependency manifest
+- public demo assets and release documentation
+
+Hardware demos and dependency files in this repository should always match the actual hardware build being released.
 
 ## License
 
