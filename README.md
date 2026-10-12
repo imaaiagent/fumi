@@ -1,5 +1,12 @@
 # FUMI
 
+[![Release](https://img.shields.io/github/v/release/imaaiagent/fumi?include_prereleases&label=release)](https://github.com/imaaiagent/fumi/releases)
+[![License](https://img.shields.io/github/license/imaaiagent/fumi)](https://github.com/imaaiagent/fumi/blob/main/LICENSE)
+[![ESP32-S3](https://img.shields.io/badge/hardware-ESP32--S3-blue)](https://github.com/imaaiagent/fumi)
+[![Status](https://img.shields.io/badge/status-public%20preview-orange)](https://github.com/imaaiagent/fumi/releases)
+
+An open-source AI companion that lives on your desk.
+
 ![FUMI](docs/assets/fumi-banner.png)
 
 ### An open-source AI companion that lives on your desk.
