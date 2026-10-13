@@ -88,7 +88,7 @@ Do not publish media that exposes passwords, API keys, private SSIDs, or private
 
 <img src="docs/assets/fumi-photo-1.png" alt="FUMI prototype" width="420">
 
-[▶ Watch the real FUMI prototype demo](docs/assets/fumi-demo.mp4)
+[▶ Watch the real FUMI prototype demo](https://youtube.com/shorts/-ibA0lVkqD0?feature=share)
 
 ## Supported AI providers
 
