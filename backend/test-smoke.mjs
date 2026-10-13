@@ -5,7 +5,7 @@ const port = 18787;
 const child = spawn(process.execPath, ["--env-file=.env", "server.mjs"], {
   cwd: new URL(".", import.meta.url),
   env: { ...process.env, PORT: String(port), FUMI_DEVICE_TOKEN: "test-token", LLM_MODEL: "unused" },
-  stdio: "ignore",
+  stdio: ["ignore", "inherit", "inherit"],
 });
 try {
   let ready = false;
