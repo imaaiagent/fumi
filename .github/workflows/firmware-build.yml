@@ -1,0 +1,54 @@
+
+name: FUMI Firmware Build
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "firmware/**"
+      - "scripts/setup-waveshare.sh"
+      - ".github/workflows/firmware-build.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "firmware/**"
+      - "scripts/setup-waveshare.sh"
+      - ".github/workflows/firmware-build.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  firmware-build:
+    name: ESP32-S3 Firmware Compile
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Prepare Waveshare sketch
+        run: bash scripts/setup-waveshare.sh
+
+      - name: Set up Arduino CLI
+        uses: arduino/setup-arduino-cli@v2
+
+      - name: Install ESP32 platform
+        run: |
+          arduino-cli config init
+          arduino-cli core update-index \
+            --additional-urls https://espressif.github.io/arduino-esp32/package_esp32_index.json
+          arduino-cli core install esp32:esp32@3.3.12 \
+            --additional-urls https://espressif.github.io/arduino-esp32/package_esp32_index.json
+
+      - name: Install LVGL
+        run: arduino-cli lib install "lvgl@8.3.10"
+
+      - name: Compile FUMI
+        run: |
+          arduino-cli compile \
+            --fqbn "esp32:esp32:esp32s3:FlashSize=16M,FlashMode=qio,FlashFreq=80,PSRAM=opi,PartitionScheme=huge_app" \
+            --libraries firmware/vendor/waveshare/example/Arduino-3.1.1/libraries \
+            firmware/build/LVGL_Arduino
