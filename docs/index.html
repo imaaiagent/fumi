@@ -59,6 +59,104 @@
         <div><b>05</b><span>Push-to-talk voice</span><small>Speak to FUMI through the onboard mic</small></div>
         <div><b>06</b><span>Cloud AI chat</span><small>Provider-agnostic model backend</small></div>
       </div>
+
+      <section class="compatible-boards" aria-labelledby="compatible-title">
+        <div class="compatible-heading">
+          <div>
+            <p class="eyebrow">HARDWARE OPTIONS</p>
+            <h3 id="compatible-title">One brain. Different builds.</h3>
+          </div>
+          <p>The Waveshare board is the current reference build. Other ESP32-S3 setups are possible, but need display, touch and audio driver adaptation.</p>
+        </div>
+
+        <div class="board-grid">
+          <a class="board-card board-card-featured" href="https://docs.waveshare.com/ESP32-S3-Touch-LCD-1.46" target="_blank" rel="noreferrer">
+            <div class="board-image board-image-photo">
+              <img src="assets/fumi-photo-3.png" alt="FUMI prototype built on the Waveshare ESP32-S3 round display board">
+              <span class="board-badge">REFERENCE BUILD</span>
+            </div>
+            <strong>Waveshare ESP32-S3</strong>
+            <span class="board-model">Touch LCD 1.46″</span>
+            <small>Round touch display, mic and speaker onboard.</small>
+            <em>Current FUMI build ↗</em>
+          </a>
+
+          <a class="board-card" href="https://www.waveshare.com/esp32-s3-touch-lcd-1.28.htm" target="_blank" rel="noreferrer">
+            <div class="board-image">
+              <svg viewBox="0 0 180 110" role="img" aria-label="Illustration of a compact round ESP32 display board">
+                <defs><linearGradient id="roundA" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#343744"/><stop offset="1" stop-color="#11131a"/></linearGradient></defs>
+                <ellipse cx="90" cy="57" rx="49" ry="46" fill="#090b10" stroke="#626575" stroke-width="2"/>
+                <circle cx="90" cy="55" r="35" fill="url(#roundA)" stroke="#ff78bd" stroke-width="2"/>
+                <circle cx="90" cy="55" r="28" fill="#eeeaf0"/>
+                <ellipse cx="81" cy="50" rx="4" ry="7" fill="#171820"/><ellipse cx="100" cy="50" rx="4" ry="7" fill="#171820"/>
+                <path d="M86 65 Q90 62 94 65" stroke="#171820" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <rect x="48" y="18" width="15" height="7" rx="2" fill="#b2b7c7"/><rect x="119" y="83" width="14" height="7" rx="2" fill="#b2b7c7"/>
+                <circle cx="49" cy="56" r="3" fill="#91b5ff"/><circle cx="131" cy="56" r="3" fill="#91b5ff"/>
+              </svg>
+              <span class="board-badge">ROUND DISPLAY</span>
+            </div>
+            <strong>Waveshare LCD 1.28″</strong>
+            <span class="board-model">Compact round build</span>
+            <small>Smaller-screen path; port UI and drivers.</small>
+            <em>Explore board ↗</em>
+          </a>
+
+          <a class="board-card" href="https://www.waveshare.com/esp32-s3-touch-lcd-1.85.htm" target="_blank" rel="noreferrer">
+            <div class="board-image">
+              <svg viewBox="0 0 180 110" role="img" aria-label="Illustration of a larger round ESP32 display board">
+                <rect x="29" y="10" width="122" height="90" rx="13" fill="#20232d" stroke="#555968" stroke-width="2"/>
+                <circle cx="90" cy="53" r="37" fill="#090b10" stroke="#91b5ff" stroke-width="2"/>
+                <circle cx="90" cy="53" r="29" fill="#e9e6ec"/>
+                <ellipse cx="80" cy="48" rx="4" ry="7" fill="#171820"/><ellipse cx="100" cy="48" rx="4" ry="7" fill="#171820"/>
+                <path d="M85 64 Q90 67 95 64" stroke="#171820" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <rect x="37" y="22" width="12" height="7" rx="2" fill="#a8adbd"/><rect x="131" y="78" width="12" height="7" rx="2" fill="#a8adbd"/>
+                <circle cx="42" cy="53" r="3" fill="#ff78bd"/><circle cx="138" cy="53" r="3" fill="#ff78bd"/>
+              </svg>
+              <span class="board-badge">LARGER DISPLAY</span>
+            </div>
+            <strong>Waveshare LCD 1.85″</strong>
+            <span class="board-model">Room for a new UI</span>
+            <small>Different resolution and drivers need work.</small>
+            <em>Explore board ↗</em>
+          </a>
+
+          <a class="board-card" href="https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp32-s3-devkitc-1/index.html" target="_blank" rel="noreferrer">
+            <div class="board-image">
+              <svg viewBox="0 0 180 110" role="img" aria-label="Illustration of an ESP32-S3 development board with pins">
+                <rect x="54" y="8" width="72" height="94" rx="5" fill="#1b5148" stroke="#6bb5a2" stroke-width="2"/>
+                <rect x="72" y="21" width="36" height="30" rx="3" fill="#252a35" stroke="#9ca3b4"/>
+                <rect x="79" y="27" width="22" height="18" rx="2" fill="#11141b"/>
+                <rect x="72" y="61" width="36" height="18" rx="2" fill="#b7bdc8"/>
+                <rect x="79" y="84" width="22" height="10" rx="2" fill="#c8cbd4"/>
+                <g fill="#d6c88b"><circle cx="62" cy="18" r="2"/><circle cx="62" cy="29" r="2"/><circle cx="62" cy="40" r="2"/><circle cx="62" cy="51" r="2"/><circle cx="62" cy="62" r="2"/><circle cx="62" cy="73" r="2"/><circle cx="62" cy="84" r="2"/><circle cx="118" cy="18" r="2"/><circle cx="118" cy="29" r="2"/><circle cx="118" cy="40" r="2"/><circle cx="118" cy="51" r="2"/><circle cx="118" cy="62" r="2"/><circle cx="118" cy="73" r="2"/><circle cx="118" cy="84" r="2"/></g>
+              </svg>
+              <span class="board-badge">DIY ROUTE</span>
+            </div>
+            <strong>ESP32-S3 DevKitC-1</strong>
+            <span class="board-model">Board + peripherals</span>
+            <small>Add a display, touch input, mic and speaker.</small>
+            <em>View hardware docs ↗</em>
+          </a>
+
+          <div class="board-card board-card-custom">
+            <div class="board-image">
+              <svg viewBox="0 0 180 110" role="img" aria-label="Illustration of a custom embedded board">
+                <path d="M34 23 L135 14 L151 78 L51 96 Z" fill="#1b5148" stroke="#73b8a8" stroke-width="2"/>
+                <rect x="68" y="34" width="47" height="35" rx="4" fill="#252a35" stroke="#9ba2b5" transform="rotate(-5 91 51)"/>
+                <rect x="78" y="42" width="27" height="18" rx="2" fill="#10131a" transform="rotate(-5 91 51)"/>
+                <g stroke="#d3c58b" stroke-width="2"><path d="M43 32 l17 -2"/><path d="M45 42 l17 -2"/><path d="M47 52 l17 -2"/><path d="M49 62 l17 -2"/><path d="M51 72 l17 -2"/><path d="M119 28 l16 -1"/><path d="M121 38 l16 -1"/><path d="M123 48 l16 -1"/><path d="M125 58 l16 -1"/></g>
+                <circle cx="42" cy="82" r="4" fill="#ff78bd"/><circle cx="140" cy="24" r="4" fill="#91b5ff"/>
+              </svg>
+              <span class="board-badge">EXPERIMENTAL</span>
+            </div>
+            <strong>Custom ESP32-S3</strong>
+            <span class="board-model">Your hardware, your rules</span>
+            <small>Adapt the display and audio stack for your build.</small>
+            <em>Porting required</em>
+          </div>
+        </div>
+        <p class="board-footnote">Important: these are hardware paths, not plug-and-play firmware targets. The current firmware is built around the Waveshare ESP32-S3 Touch LCD 1.46″.</p>
+      </section>
     </article>
 
     <article class="panel visual-panel">
