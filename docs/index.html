@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FUMI — an open-source AI companion that lives on your desk. Built with ESP32-S3, touch, voice, and any AI model.">
+  <title>FUMI — AI companion on your desk</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="nav wrap">
+    <a class="brand" href="#">FUMI<span>_</span></a>
+    <nav>
+      <a href="#why">Why</a>
+      <a href="#device">Device</a>
+      <a href="#stack">Stack</a>
+      <a href="#build">Build</a>
+      <a class="nav-github" href="https://github.com/imaaiagent/fumi" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="dot"></span> OPEN SOURCE / ESP32-S3 / VOICE AI</div>
+        <h1>An AI companion<br>that <em>lives</em><br>on your desk.</h1>
+        <p class="lede">FUMI is a small physical AI companion built around an ESP32-S3, a touch display, a microphone, and a speaker.</p>
+        <div class="actions">
+          <a class="btn primary" href="#device">Explore FUMI <span>↓</span></a>
+          <a class="btn ghost" href="https://github.com/imaaiagent/fumi" target="_blank" rel="noreferrer">View source ↗</a>
+        </div>
+        <div class="statusline"><span>●</span> v0.1.0 public preview <span class="sep">/</span> voice pipeline working</div>
+      </div>
+      <div class="hero-art">
+        <div class="orbit orbit-a"></div>
+        <div class="orbit orbit-b"></div>
+        <div class="hero-card">
+          <img src="assets/fumi-photo-1.png" alt="FUMI physical device">
+          <div class="scan"></div>
+          <div class="corner c1"></div><div class="corner c2"></div>
+          <div class="device-label">FUMI // UNIT 01</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why" class="section wrap split">
+      <div class="section-index">01</div>
+      <div>
+        <div class="kicker">THE IDEA</div>
+        <h2>Why put an AI<br>inside a <span>device?</span></h2>
+        <p>I wanted to build an AI companion that actually lives on a physical device instead of existing only in a browser or terminal. A physical device changes the interaction completely: it has a screen, a body, limited memory, real input/output constraints, and has to be useful even when the interface is just a small touch display.</p>
+        <p>FUMI started from that idea — building a small desktop companion and figuring out what it takes to make an AI feel like part of a device rather than just another chat interface.</p>
+      </div>
+    </section>
+
+    <section id="device" class="section device-section">
+      <div class="wrap">
+        <div class="section-index">02</div>
+        <div class="device-head">
+          <div>
+            <div class="kicker">THE DEVICE</div>
+            <h2>Small hardware.<br>Real constraints.</h2>
+          </div>
+          <p>FUMI runs on an ESP32-S3 with a round touch display. The firmware uses LVGL for expressions, animations, touch interaction, and companion state.</p>
+        </div>
+
+        <div class="photo-grid">
+          <figure class="photo large"><img src="assets/fumi-photo-2.png" alt="FUMI device detail"></figure>
+          <figure class="photo"><img src="assets/fumi-photo-3.png" alt="FUMI display"></figure>
+          <div class="spec-card">
+            <span class="spec-num">01</span><strong>ESP32-S3</strong><small>embedded compute</small>
+          </div>
+          <div class="spec-card">
+            <span class="spec-num">02</span><strong>TOUCH</strong><small>round display / LVGL</small>
+          </div>
+          <div class="spec-card">
+            <span class="spec-num">03</span><strong>VOICE</strong><small>mic + speaker</small>
+          </div>
+          <div class="spec-card">
+            <span class="spec-num">04</span><strong>WIFI</strong><small>remote inference</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap demo-section">
+      <div class="section-index">03</div>
+      <div class="demo-top">
+        <div>
+          <div class="kicker">IN ACTION</div>
+          <h2>Touch. Talk. Listen.</h2>
+        </div>
+        <p>The voice path is implemented end-to-end. The device captures audio, sends it through speech-to-text and the AI backend, then turns the response back into speech.</p>
+      </div>
+      <div class="demo-frame">
+        <img src="assets/fumi-demo-preview.gif" alt="FUMI demo animation">
+        <div class="demo-meta"><span>DEMO / PREVIEW</span><span>FULL VIDEO WITH AUDIO →</span></div>
+      </div>
+      <video class="full-video" controls preload="metadata" poster="assets/fumi-banner.png">
+        <source src="assets/fumi-demo.mp4" type="video/mp4">
+      </video>
+    </section>
+
+    <section id="stack" class="section stack-section">
+      <div class="wrap">
+        <div class="section-index">04</div>
+        <div class="stack-head">
+          <div>
+            <div class="kicker">UNDER THE HOOD</div>
+            <h2>One device.<br>A remote AI loop.</h2>
+          </div>
+          <div class="stack-note">The hardware is kept independent from a single model provider.</div>
+        </div>
+        <div class="pipeline">
+          <div class="node"><b>01</b><span>MIC</span><small>audio capture</small></div>
+          <div class="arrow">→</div>
+          <div class="node"><b>02</b><span>STT</span><small>speech to text</small></div>
+          <div class="arrow">→</div>
+          <div class="node hot"><b>03</b><span>AI</span><small>model backend</small></div>
+          <div class="arrow">→</div>
+          <div class="node"><b>04</b><span>TTS</span><small>text to speech</small></div>
+          <div class="arrow">→</div>
+          <div class="node"><b>05</b><span>SPEAKER</span><small>audio output</small></div>
+        </div>
+        <div class="code-note">
+          <span>// the interesting part</span>
+          <p>Audio buffers, memory limits, network latency, model abstraction, and keeping an embedded UI responsive while inference happens remotely.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap problems">
+      <div class="section-index">05</div>
+      <div class="problems-head">
+        <div class="kicker">THE HARD PART</div>
+        <h2>Building an AI on<br>a tiny device is <span>weird.</span></h2>
+      </div>
+      <div class="problem-list">
+        <div><b>01</b><span>Audio buffering</span><i>memory / timing</i></div>
+        <div><b>02</b><span>Latency</span><i>network / STT / TTS</i></div>
+        <div><b>03</b><span>Memory</span><i>embedded constraints</i></div>
+        <div><b>04</b><span>Provider abstraction</span><i>different AI models</i></div>
+        <div><b>05</b><span>Responsiveness</span><i>UI while inference runs</i></div>
+      </div>
+    </section>
+
+    <section id="build" class="section build-section">
+      <div class="wrap build-card">
+        <div>
+          <div class="kicker">OPEN SOURCE</div>
+          <h2>Build your own<br>version of FUMI.</h2>
+          <p>The repository contains the firmware, backend, hardware notes, API documentation, setup scripts, and demo materials. Fork it, inspect it, break it, and build something different.</p>
+        </div>
+        <div class="build-actions">
+          <a class="btn primary" href="https://github.com/imaaiagent/fumi" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+          <a class="btn ghost" href="https://github.com/imaaiagent/fumi/tree/main/docs" target="_blank" rel="noreferrer">Read the docs ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap discussion">
+      <div class="section-index">06</div>
+      <div>
+        <div class="kicker">OPEN QUESTION</div>
+        <h2>How would you design<br>the voice pipeline?</h2>
+        <p>I'm interested in the engineering trade-offs around audio buffering, latency, local vs remote inference, and keeping an ESP32-class device responsive. If you're building something similar, let's compare approaches.</p>
+        <a class="text-link" href="https://github.com/imaaiagent/fumi/discussions" target="_blank" rel="noreferrer">Discuss on GitHub ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <div class="brand">FUMI<span>_</span></div>
+    <div>An open-source AI companion that lives on your desk.</div>
+    <div><a href="https://github.com/imaaiagent/fumi" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
