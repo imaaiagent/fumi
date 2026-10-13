@@ -1,0 +1,97 @@
+
+name: Bug Report
+description: Report a reproducible bug in FUMI.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug! Please provide enough information
+        for maintainers to reproduce and investigate the problem.
+
+        **Security reminder:** Remove API keys, access tokens, passwords,
+        private keys, and other secrets from logs before sharing them.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug description
+      description: Describe the problem you encountered.
+      placeholder: What happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What happened instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: List the steps needed to reproduce the bug.
+      placeholder: |
+        1. Start the device or application.
+        2. Perform an action.
+        3. Observe the problem.
+    validations:
+      required: true
+
+  - type: input
+    id: firmware
+    attributes:
+      label: Firmware version
+      description: Provide the firmware version, if applicable.
+      placeholder: e.g. 1.0.0
+    validations:
+      required: false
+
+  - type: input
+    id: backend
+    attributes:
+      label: Backend version or environment
+      description: Provide the backend version or deployment environment.
+    validations:
+      required: false
+
+  - type: input
+    id: board
+    attributes:
+      label: Board or hardware
+      description: Identify the board or hardware, if applicable.
+      placeholder: e.g. ESP32-S3
+    validations:
+      required: false
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment details
+      description: Include relevant OS, application version, logs, or other details.
+      placeholder: |
+        Operating system:
+        Application version:
+        Relevant error messages:
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Add any other relevant information or screenshots.
+    validations:
+      required: false
