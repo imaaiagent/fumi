@@ -46,9 +46,11 @@ jobs:
       - name: Install LVGL
         run: arduino-cli lib install "lvgl@8.3.10"
 
+      
       - name: Compile FUMI
         run: |
           arduino-cli compile \
-            --fqbn "esp32:esp32:esp32s3:FlashSize=16M,FlashMode=qio,FlashFreq=80,PSRAM=opi,PartitionScheme=huge_app" \
+            --fqbn "esp32:esp32:esp32s3:FlashSize=16M,FlashMode=qio,PSRAM=opi,PartitionScheme=huge_app" \
             --libraries firmware/vendor/waveshare/example/Arduino-3.1.1/libraries \
             firmware/build/LVGL_Arduino
+
