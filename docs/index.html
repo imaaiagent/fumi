@@ -1,70 +1,119 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>FUMI — a little AI companion</title>
-<meta name="description" content="FUMI is a tiny physical AI companion built on an ESP32-S3. Same board. Anywhere.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FUMI — Open-source AI hardware</title>
+<meta name="description" content="FUMI is an open-source physical AI companion built on an ESP32-S3. One board, different places, your own build.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="nav">
-  <a class="logo" href="#top">FUMI<span>_</span></a>
-  <nav><a href="#why">why</a><a href="#anywhere">anywhere</a><a href="#talk">talk</a><a href="#build">build</a></nav>
-  <a class="github" href="https://github.com/imaaiagent/fumi" target="_blank" rel="noreferrer">GitHub ↗</a>
+<header class="topbar">
+  <a class="brand" href="#top"><span class="brand-mark">f.</span> FUMI</a>
+  <nav>
+    <a href="#hardware">Hardware</a>
+    <a href="#voice">Voice</a>
+    <a href="#ideas">Project ideas</a>
+    <a href="#source">Source</a>
+  </nav>
+  <a class="top-button" href="https://github.com/imaaiagent/fumi" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
 </header>
 
 <main id="top">
-<section class="hero">
-  <div class="hero-copy">
-    <p class="hello">hi, i'm FUMI <span>♡</span></p>
-    <h1>A little AI<br>that <em>lives</em><br>with you.</h1>
-    <p class="sub">A tiny physical companion with a screen, microphone and speaker. Built on an ESP32-S3. Put it wherever you want.</p>
-    <div class="actions"><a class="btn pink" href="#anywhere">meet FUMI ↓</a><a class="btn" href="https://github.com/imaaiagent/fumi" target="_blank" rel="noreferrer">build one ↗</a></div>
-  </div>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="dot"></span> OPEN-SOURCE HARDWARE FOR YOUR AI</p>
+      <h1>A little AI.<br><span>A real place.</span></h1>
+      <p class="lead">FUMI is a physical AI companion built around an ESP32-S3, a round touch display, a microphone and a speaker. Build it, place it, make it yours.</p>
+      <div class="hero-actions">
+        <a class="btn btn-solid" href="#hardware">Explore FUMI <span>↓</span></a>
+        <a class="btn" href="https://github.com/imaaiagent/fumi" target="_blank" rel="noreferrer">View source <span>↗</span></a>
+      </div>
+      <div class="hero-meta"><span>ESP32-S3</span><b>·</b><span>VOICE AI</span><b>·</b><span>OPEN SOURCE</span></div>
+    </div>
+    <div class="hero-image">
+      <img src="assets/fumi-photo-1.png" alt="FUMI running on its round display">
+      <div class="image-caption"><span>FUMI / UNIT 01</span><span>REAL HARDWARE, NOT A RENDER</span></div>
+    </div>
+  </section>
 
-  <div class="hero-face-wrap" id="heroFace" aria-label="FUMI face whose eyes follow your cursor">
-    <div class="soft-blob"></div>
-    <img class="fumi-face" src="assets/fumi-face.png" alt="FUMI face">
-    <div class="eye eye-left"><span></span></div>
-    <div class="eye eye-right"><span></span></div>
-    <div class="cursor-note">move your mouse<br>say hi to FUMI</div>
-  </div>
-</section>
+  <section class="photo-strip" aria-label="FUMI prototype photos">
+    <figure><img src="assets/fumi-photo-2.png" alt="FUMI close-up"><figcaption>01 / THE FACE</figcaption></figure>
+    <figure><img src="assets/fumi-photo-3.png" alt="FUMI prototype on a desk"><figcaption>02 / THE BUILD</figcaption></figure>
+    <figure class="strip-note"><div class="face-mini">•ᴗ•</div><p>Same board.<br><strong>Different places.</strong></p><span>DESK · BEDSIDE · YOUR IDEA</span></figure>
+  </section>
 
-<section class="mini-intro" id="why">
-  <div class="mini-face">•ᴗ•</div>
-  <p><b>FUMI isn't an app.</b> It's a little thing that sits next to you. You can see it. Touch it. Talk to it. And eventually, give it a body of your own.</p>
-</section>
+  <section class="feature-grid" id="hardware">
+    <article class="panel make-panel">
+      <p class="eyebrow">01 / MAKE YOUR OWN</p>
+      <h2>Built by a maker.<br>Open for everyone.</h2>
+      <p>FUMI started with a simple idea: an AI companion should be more than a tab in a browser. The project brings together firmware, a voice backend and a small physical interface.</p>
+      <a class="text-link" href="https://github.com/imaaiagent/fumi" target="_blank" rel="noreferrer">Explore the repository <span>↗</span></a>
+    </article>
 
-<section class="anywhere" id="anywhere">
-  <div class="eyebrow">same board. anywhere.</div>
-  <div class="anywhere-head"><h2>Put FUMI<br><em>wherever.</em></h2><p>The hardware stays the same. The place, shell and personality don't have to. Desk FUMI. Bedside FUMI. Weird little corner FUMI. You decide.</p></div>
-  <div class="photo-row">
-    <figure><img src="assets/fumi-photo-1.png" alt="FUMI on a desk"><figcaption><b>DESK</b><span>the classic</span></figcaption></figure>
-    <figure><img src="assets/fumi-photo-2.png" alt="FUMI prototype"><figcaption><b>BEDSIDE</b><span>say goodnight</span></figcaption></figure>
-    <figure><img src="assets/fumi-photo-3.png" alt="FUMI prototype"><figcaption><b>ANYWHERE</b><span>make it yours</span></figcaption></figure>
-  </div>
-  <div class="board-line"><span class="board-face">◕ᴗ◕</span><b>ONE BOARD.</b><span>ESP32-S3 · 1.46" ROUND TOUCH · MIC · SPEAKER · WIFI</span></div>
-</section>
+    <article class="panel hardware-panel">
+      <p class="eyebrow">02 / ON YOUR HARDWARE</p>
+      <h2>The little machine</h2>
+      <div class="spec-list">
+        <div><span class="spec-icon">⌘</span><p><strong>ESP32-S3</strong><small>Embedded compute + Wi-Fi</small></p></div>
+        <div><span class="spec-icon">◉</span><p><strong>1.46″ round touch display</strong><small>Expressions and interaction</small></p></div>
+        <div><span class="spec-icon">♫</span><p><strong>Microphone + speaker</strong><small>Talk to FUMI, hear it reply</small></p></div>
+        <div><span class="spec-icon">⌁</span><p><strong>Remote AI brain</strong><small>Voice processing over Wi-Fi</small></p></div>
+      </div>
+    </article>
 
-<section class="talk" id="talk">
-  <div class="talk-copy"><div class="eyebrow">yes, it actually talks.</div><h2>Press.<br>Talk.<br><em>FUMI answers.</em></h2><p>Touch the screen, speak, and the voice loop runs end-to-end — mic → STT → FUMI Brain → TTS → speaker.</p><span class="working"><i></i> voice pipeline working</span></div>
-  <div class="video"><video controls playsinline poster="assets/fumi-banner.png"><source src="assets/fumi-demo.mp4" type="video/mp4"></video></div>
-</section>
+    <article class="panel voice-panel" id="voice">
+      <p class="eyebrow">03 / IN ACTION</p>
+      <h2>Touch. Talk. Listen.</h2>
+      <p>The voice loop works end-to-end: FUMI records audio, turns speech into text, gets an AI response, then speaks it back.</p>
+      <div class="voice-flow"><span>MIC</span><b>→</b><span>STT</span><b>→</b><span class="flow-active">AI</span><b>→</b><span>TTS</span><b>→</b><span>SPEAKER</span></div>
+      <a class="text-link" href="#demo">Watch the demo <span>↓</span></a>
+    </article>
 
-<section class="simple-build" id="build">
-  <div class="eyebrow">under the face</div>
-  <div class="build-grid"><h2>Small board.<br><em>Big personality.</em></h2><div class="specs"><div><b>ESP32-S3</b><span>the brain</span></div><div><b>ROUND DISPLAY</b><span>the face</span></div><div><b>MIC + SPEAKER</b><span>listen + talk</span></div><div><b>WIFI</b><span>remote AI</span></div></div></div>
-</section>
+    <article class="panel source-panel" id="source">
+      <p class="eyebrow">04 / OPEN IT UP</p>
+      <h2>Make it yours.</h2>
+      <p>Explore the firmware, backend, setup notes and demo materials. Fork the project, learn from the build, or make your own version of FUMI.</p>
+      <div class="source-actions">
+        <a class="btn btn-solid" href="https://github.com/imaaiagent/fumi" target="_blank" rel="noreferrer">FUMI on GitHub <span>↗</span></a>
+        <a class="text-link" href="https://github.com/imaaiagent/fumi/tree/main/docs" target="_blank" rel="noreferrer">Read the docs <span>↗</span></a>
+      </div>
+      <div class="source-doodle" aria-hidden="true">fumi<span>♡</span></div>
+    </article>
+  </section>
 
-<section class="open">
-  <div class="open-face-wrap"><img src="assets/fumi-face.png" alt="FUMI face"><div class="eye small left"><span></span></div><div class="eye small right"><span></span></div></div>
-  <div><div class="eyebrow">open source</div><h2>Make your<br><em>own FUMI.</em></h2><p>Same board. Your enclosure. Your little guy. The firmware and backend are open — fork it and build something weird.</p><a class="btn black" href="https://github.com/imaaiagent/fumi" target="_blank" rel="noreferrer">open GitHub ↗</a></div>
-</section>
+  <section class="demo-section" id="demo">
+    <div class="section-heading">
+      <div><p class="eyebrow">05 / REAL DEVICE DEMO</p><h2>It actually talks.</h2></div>
+      <p>See the current prototype in action. No concept render — this is the device running on the desk.</p>
+    </div>
+    <div class="video-frame">
+      <video controls playsinline poster="assets/fumi-banner.png">
+        <source src="assets/fumi-demo.mp4" type="video/mp4">
+        Your browser does not support video.
+      </video>
+      <div class="video-caption"><span>FUMI / VOICE PIPELINE</span><span>PLAY WITH SOUND ↗</span></div>
+    </div>
+  </section>
 
-<section class="bye"><div class="bye-face">-ᴗ-</div><p>okay bye ♡</p><h2>see you<br><em>somewhere.</em></h2></section>
+  <section class="ideas-section" id="ideas">
+    <div class="section-heading">
+      <div><p class="eyebrow">06 / ONE BOARD, MANY POSSIBILITIES</p><h2>Put FUMI anywhere.</h2></div>
+      <p>The same board can live in different setups. Start with the hardware you have, then experiment with the body, enclosure and place it calls home.</p>
+    </div>
+    <div class="idea-grid">
+      <article><img src="assets/fumi-photo-1.png" alt="FUMI on a desk"><div><strong>Desk buddy</strong><span>Always within reach</span></div></article>
+      <article><img src="assets/fumi-photo-2.png" alt="FUMI close-up"><div><strong>Bedside friend</strong><span>A little voice nearby</span></div></article>
+      <article class="idea-note"><span class="big-face">◕ᴗ◕</span><strong>Your build.</strong><span>Same board. Your own idea.</span></article>
+    </div>
+  </section>
+
+  <footer>
+    <a class="brand" href="#top"><span class="brand-mark">f.</span> FUMI</a>
+    <p>Made by <a href="https://github.com/imaaiagent" target="_blank" rel="noreferrer">imaaiagent</a> · Open source, still evolving.</p>
+    <a class="back-top" href="#top">Back to top ↑</a>
+  </footer>
 </main>
-<footer><b>FUMI_</b><span>made by imaaiagent · open source</span><a href="https://github.com/imaaiagent/fumi" target="_blank" rel="noreferrer">GitHub ↗</a></footer>
 <script src="script.js"></script>
 </body>
 </html>
