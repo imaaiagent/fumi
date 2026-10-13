@@ -1,0 +1,28 @@
+name: FUMI CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  backend:
+    name: Backend checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Check backend syntax
+        run: node --check backend/server.mjs
+
+      - name: Run backend smoke tests
+        run: node backend/test-smoke.mjs
