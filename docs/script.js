@@ -1,10 +1,1 @@
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    const el=document.querySelector(a.getAttribute('href'));
-    if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'});}
-  });
-});
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
-},{threshold:.08});
-document.querySelectorAll('.section,.hero-copy,.hero-art').forEach(el=>observer.observe(el));
+const toggle=document.querySelector('.menu-toggle');const nav=document.querySelector('.nav');if(toggle&&nav){toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'×':'☰'});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰'}))}const revealItems=document.querySelectorAll('.principles article,.device-photo,.pipeline-step,.challenge-list article');if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in-view');observer.unobserve(entry.target)}}),{threshold:.12});revealItems.forEach(el=>{el.classList.add('reveal');observer.observe(el)})}
