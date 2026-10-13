@@ -32,6 +32,38 @@ jobs:
       - name: Prepare Waveshare sketch
         run: bash scripts/setup-waveshare.sh
 
+        
+      - name: Fix ESP-SR command compatibility
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          p = Path("firmware/build/LVGL_Arduino/MIC_MSM.cpp")
+          s = p.read_text()
+
+          replacements = {
+              '{0, "Turn on the backlight", "TkN nN jc BaKLiT"}':
+                  '{0, "Turn on the backlight"}',
+              '{1, "Turn off the backlight", "TkN eF jc BaKLiT"}':
+                  '{1, "Turn off the backlight"}',
+              '{2, "backlight is brightest", "BaKLiT gZ BRiTcST"}':
+                  '{2, "backlight is brightest"}',
+              '{3, "backlight is darkest", "BaKLiT gZ DnRKcST"}':
+                  '{3, "backlight is darkest"}',
+              '{4, "play music", "PLd MYoZgK"}':
+                  '{4, "play music"}',
+          }
+
+          for old, new in replacements.items():
+              if old not in s:
+                  raise SystemExit(f"Expected source entry not found: {old}")
+              s = s.replace(old, new, 1)
+
+          p.write_text(s)
+          print("ESP-SR commands adapted for ESP32 core 3.3.12")
+          PY
+
+
       - name: Set up Arduino CLI
         uses: arduino/setup-arduino-cli@v2
 
