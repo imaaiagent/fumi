@@ -298,6 +298,25 @@ See `SECURITY.md`.
 
 ---
 
+
+## Contribute to FUMI
+
+FUMI is an open-source project, and contributions from makers and developers are welcome.
+
+**New to the project? Start here:**
+
+- [Read the contribution guide](CONTRIBUTING.md)
+- [Improve the setup guide](https://github.com/imaaiagent/fumi/issues/1) — help first-time builders get started.
+- [Document the hardware setup](https://github.com/imaaiagent/fumi/issues/2) — help makers understand the components and connections.
+- [Improve bug reporting](https://github.com/imaaiagent/fumi/issues/3) — help us make bug reports easier to reproduce.
+
+You can contribute through documentation, reproducible bug reports, firmware improvements, backend development, or UI and animation work.
+
+Before opening a pull request, please read the contribution guidelines and test your changes where possible.
+
+**Found a problem or have an idea?** [Open an issue](https://github.com/imaaiagent/fumi/issues) and tell us what you found.
+
+
 ## Project status
 
 FUMI is presented as a complete open-source reference build in this repository:
