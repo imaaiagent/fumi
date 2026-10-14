@@ -337,6 +337,42 @@ FUMI is presented as a complete open-source reference build in this repository:
 
 Hardware demos and dependency files in this repository should always match the actual hardware build being released.
 
+
+## Download Firmware
+
+Want to try FUMI on your ESP32-S3 board without compiling
+the firmware yourself?
+
+### Get the Latest Build
+
+1. Open [FUMI Firmware Build on GitHub Actions](https://github.com/imaaiagent/fumi/actions/workflows/firmware-build.yml).
+2. Select the latest successful workflow run on the `main` branch.
+3. Scroll to the **Artifacts** section at the bottom.
+4. Download the `fumi-firmware-*` artifact ZIP.
+5. Extract the ZIP to access the firmware binaries and `README.txt`.
+
+### Target Hardware
+
+- Board: Waveshare ESP32-S3 Touch LCD 1.46
+- Flash: 16 MB
+- PSRAM: OPI
+- ESP32 Arduino core: 3.3.12
+- Partition scheme: Huge APP
+
+### Important Notes
+
+- These are automated build artifacts and have not necessarily
+  been tested on physical hardware.
+- Read the included `README.txt` before using any binary.
+- Verify flash addresses, partition layout, and board settings
+  before flashing.
+- Back up your working firmware before replacing it.
+- Do not share Wi-Fi passwords, API keys, or access tokens.
+
+**Artifact retention:** Build artifacts are currently retained
+for 14 days. Downloaded files can be kept locally.
+
+
 ## License
 
 MIT. See `LICENSE`.
