@@ -5,16 +5,15 @@
 [![ESP32-S3](https://img.shields.io/badge/hardware-ESP32--S3-blue)](https://github.com/imaaiagent/fumi)
 [![Status](https://img.shields.io/badge/status-public%20preview-orange)](https://github.com/imaaiagent/fumi/releases)
 
-An open-source AI companion that lives on your desk.
-
 ![FUMI](docs/assets/fumi-banner.png)
 
-### An open-source AI companion that lives on your desk.
+An open-source, Tamagotchi-inspired AI companion for your desk, built on ESP32-S3.
 
-FUMI is a Tamagotchi-inspired physical AI companion built around an ESP32-S3 display board.
+[What FUMI Does](#what-fumi-does) · [Demo](#demo) · [Firmware Setup](#firmware-setup) · [Backend](#backend) · [Download Firmware](#download-firmware) · [Contributing](#contribute-to-fumi)
+
+FUMI combines animated expressions, touch interaction, virtual pet mechanics, and real voice conversations in a compact physical device.
 
 It combines:
-
 - animated character UI
 - touch interaction
 - hunger, energy, happiness, bond, and growth
@@ -31,7 +30,7 @@ It combines:
 
 ## Demo
 
-### What FUMI does
+## Architecture
 
 ```text
 ┌──────────────────────┐
